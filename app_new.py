@@ -1,6 +1,6 @@
 """
-RM Sales Intelligence Dashboard
-Polymer Additive Trading Business
+Sales Intelligence Dashboard
+Business
 Covers: Descriptive, Diagnostic, Predictive, Prescriptive analytics
 """
 
@@ -11,7 +11,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import timedelta
 
-st.set_page_config(page_title="RM Sales Intelligence Dashboard", layout="wide", page_icon="📊")
+st.set_page_config(page_title="Sales Intelligence Dashboard", layout="wide", page_icon="📊")
 
 REQUIRED_COLS = ["Date", "GST", "Buyers", "Product", "Sales", "Voucher", "Quantity", "Rate", "Value"]
 
