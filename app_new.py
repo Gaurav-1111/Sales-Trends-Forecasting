@@ -113,7 +113,7 @@ def load_uploaded(file):
 # SIDEBAR — DATA SOURCE
 # ----------------------------------------------------------------------------------
 st.sidebar.title("📁 Data Source")
-uploaded_file = st.sidebar.file_uploader("Upload your RM sales file (.xlsx or .csv)", type=["xlsx", "xls", "csv"])
+uploaded_file = st.sidebar.file_uploader("Upload your sales file (.xlsx or .csv)", type=["xlsx", "xls", "csv"])
 
 using_sample = False
 if uploaded_file is not None:
@@ -146,7 +146,7 @@ df = df.dropna(subset=["Quantity", "Rate", "Value"])
 df["Month"] = df["Date"].dt.to_period("M").dt.to_timestamp()
 
 if using_sample:
-    st.warning("⚠️ You're viewing **sample / dummy data** (randomly generated) so you can see how the dashboard works. Upload your actual Excel file in the sidebar to see your real RM's numbers.", icon="⚠️")
+    st.warning("⚠️ You're viewing **sample / dummy data** (randomly generated) so you can see how the dashboard works. Upload your actual Excel file in the sidebar to see your real numbers.", icon="⚠️")
 
 # ----------------------------------------------------------------------------------
 # SIDEBAR — FILTERS
@@ -161,7 +161,7 @@ sel_states = st.sidebar.multiselect("Territory (Sales)", sorted(df["Sales"].uniq
 sel_products = st.sidebar.multiselect("Product", sorted(df["Product"].unique()), default=sorted(df["Product"].unique()))
 df = df[df["Sales"].isin(sel_states) & df["Product"].isin(sel_products)]
 
-st.title("📊 RM Sales Intelligence Dashboard")
+st.title("📊 Sales Intelligence Dashboard")
 st.caption("Analysis — Descriptive · Diagnostic · Predictive · Prescriptive")
 
 tab1, tab2, tab3, tab4 = st.tabs(["📈 Descriptive", "🔍 Diagnostic", "🔮 Predictive", "🎯 Prescriptive"])
@@ -364,7 +364,7 @@ with tab3:
 # TAB 4 — PRESCRIPTIVE
 # ====================================================================================
 with tab4:
-    st.subheader("What should the RM actually do?")
+    st.subheader("What should the actually do?")
 
     snapshot_date = df["Date"].max() + pd.Timedelta(days=1)
     rfm = df.groupby("Buyers").agg(
