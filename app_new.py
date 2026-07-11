@@ -162,7 +162,7 @@ sel_products = st.sidebar.multiselect("Product", sorted(df["Product"].unique()),
 df = df[df["Sales"].isin(sel_states) & df["Product"].isin(sel_products)]
 
 st.title("📊 RM Sales Intelligence Dashboard")
-st.caption("Polymer Additive Trading — Descriptive · Diagnostic · Predictive · Prescriptive")
+st.caption("Analysis — Descriptive · Diagnostic · Predictive · Prescriptive")
 
 tab1, tab2, tab3, tab4 = st.tabs(["📈 Descriptive", "🔍 Diagnostic", "🔮 Predictive", "🎯 Prescriptive"])
 
@@ -434,4 +434,4 @@ with tab4:
         st.warning(f"⚠️ {pricing_check.iloc[0]['Product']} shows a {pricing_check.iloc[0]['Spread_%']:.0f}% rate spread across customers — worth a pricing review.")
 
 st.divider()
-st.caption("Built for RM performance review · Descriptive · Diagnostic · Predictive · Prescriptive")
+st.caption("Built for· Descriptive · Diagnostic · Predictive · Prescriptive")
