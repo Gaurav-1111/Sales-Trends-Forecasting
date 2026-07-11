@@ -396,7 +396,7 @@ with tab4:
     fig9 = px.bar(seg_summary, x="Segment", y="Customers", title="Customer Segments (RFM)", color="Segment")
     st.plotly_chart(fig9, use_container_width=True)
 
-    st.markdown("**Full RFM action list** — sort/filter to build the RM's call list")
+    st.markdown("**Full RFM action list** — sort/filter to build the call list")
     st.dataframe(
         rfm[["Buyers","Recency","Frequency","Monetary","RFM_Score","Segment"]].reset_index(drop=True),
         use_container_width=True, hide_index=True
